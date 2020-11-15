@@ -11,5 +11,6 @@ Prevent redirection from the product page. For overseas users only.
 
 # 如何使用
 
+0. 观看YouTube教程 - [Link](https://www.youtube.com/watch?v=0mv17ZHUlbk)
 1. 安装Tempermonkey - [Link](https://www.tampermonkey.net/)
 2. 下载并安装脚本 - [Bypass taobao overseas block(绕过淘宝屏蔽海外用户)](https://greasyfork.org/en/scripts/416149-bypass-taobao-overseas-block-%E7%BB%95%E8%BF%87%E6%B7%98%E5%AE%9D%E5%B1%8F%E8%94%BD%E6%B5%B7%E5%A4%96%E7%94%A8%E6%88%B7)
