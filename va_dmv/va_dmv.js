@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         VA DMV Appointment Helper
-// @description  Tool to help schedul VA DMV appointment
+// @description  Tool to help schedule VA DMV appointment
 // @icon         https://www.dmv.virginia.gov/favicon.ico
 // @version      0.1.1
 // @author       foomango
