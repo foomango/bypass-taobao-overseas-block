@@ -2,7 +2,7 @@
 // @name         VA DMV Appointment Helper
 // @description  Tool to help schedule VA DMV appointment
 // @icon         https://www.dmv.virginia.gov/favicon.ico
-// @version      0.1.1
+// @version      0.1.2
 // @author       foomango
 // @match        https://vadmvappointments.as.me/schedule.php?*
 // @grant        none
