@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         VA DMV Appointment Helper
-// @description  Tool to help schedule VA DMV appointment
+// @description  Tool to help schedul VA DMV appointment
 // @icon         https://www.dmv.virginia.gov/favicon.ico
-// @version      0.1.2
+// @version      0.2.0
 // @author       foomango
 // @match        https://vadmvappointments.as.me/schedule.php?*
 // @grant        none
@@ -40,19 +40,30 @@
         open('https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3')
     }
 
-    const testBtn = $('div[data-qa="appointment-16554603-select"]')
-    testBtn.click()
-    setTimeout(() => {
-        const availableDays = $('.activeday')
-        if (availableDays.length && /2021\-0[7-8].*/.test(availableDays.attr('day'))) {
-            setInterval(() => notifyMe(`DMV Available: ${availableDays.attr('day')}`), 3000);
-            playSound()
-        } else {
-            const timeoutID = setTimeout(() => {
-                clearTimeout(timeoutID)
-                location.reload()
-            }, 8000);
-        }
-    }, 3000)
+    const findDate = (testBtn, dateReg) => {
+        const promise = new Promise((resolve, reject) => {
+            testBtn.click()
+            setTimeout(() => {
+                const availableDays = $('.activeday')
+                if (availableDays.length && dateReg.test(availableDays.attr('day'))) {
+                    setInterval(() => notifyMe(`DMV Available: ${availableDays.attr('day')}`), 3000);
+                    playSound()
+                    resolve()
+                } else {
+                    // go back to up level
+                    testBtn.click()
+                    reject()
+                }
+            }, 5000)
+        })
+
+        return promise
+    }
+
+    const dateReg = /2021\-0[7]-[01].*/
+    findDate($('div[data-qa="appointment-16554636-select"]'), dateReg)
+        .catch(() => findDate($('div[data-qa="appointment-16554603-select"]'), dateReg))
+        .catch(() => location.reload())
+
 
 })();
