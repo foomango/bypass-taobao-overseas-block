@@ -2,7 +2,7 @@
 // @name         Monitor Zelda Low Price
 // @description  Tool to help monitor zelda low price
 // @icon         https://freepngimg.com/download/the_legend_of_zelda/21441-2-zelda-link-file.png
-// @version      0.1.0
+// @version      0.2.0
 // @author       foomango
 // @match        https://www.nintendo.com/games/detail/the-legend-of-zelda-breath-of-the-wild-switch*
 // @grant        none
@@ -41,13 +41,16 @@
     }
 
     const matchPrice = () => {
-        const price = parseFloat($('.h2.msrp').text().replace(/[^1-9.]/g, ''))
-        if (price <= 50) {
-            setInterval(() => notifyMe(`Zelda Low Price: ${price}`), 3000)
-            playSound()
-        } else {
-            location.reload()
-        }
+        setTimeout(() => {
+            const price = parseFloat($('.h2.msrp').text().replace(/[^1-9.]/g, ''))
+            if (price <= 50) {
+                setInterval(() => notifyMe(`Zelda Low Price: ${price}`), 3000)
+                playSound()
+            } else {
+                location.reload()
+            }
+        }, 10000)
+
     }
 
     matchPrice()
