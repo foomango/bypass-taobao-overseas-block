@@ -16,4 +16,9 @@
     const sheet = document.styleSheets[10]
     sheet.insertRule('#simplemodal-overlay,#free-trial-expired-modal {display: none !important; z-index: -1 !important;}')
     sheet.insertRule('body {overflow: auto !important;}')
+
+    // Create App doesn't work
+    // https://microstrategy-fengwei2-admin.okta.com/admin/apps/add-app  var modal = new FreeTrial();
+    // https://ok12static.oktacdn.com/assets/js/mvc/free-trial/main-free-trial.pack.65599e72c21e1eea5f8d5a0e69034a32.js:formatted
+    // https://microstrategy-fengwei2-admin.okta.com/admin/apps/oauth2-wizard/create?applicationType=NATIVE
 })();
