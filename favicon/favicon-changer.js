@@ -2,7 +2,7 @@
 // @name         Favicon Changer
 // @description  A script to change the favicon of a website dynamically.
 // @icon         https://lh3.googleusercontent.com/HCZN-e46WVjQuhNwXMvqYgi7N-nBBX-u4CMxBj2B15vYqeFF12YTHvE9ECeZ2FuzGWvB1PT03-uCDXGRl_Erjt_-XWc=s120
-// @version      0.0.2
+// @version      0.0.3
 // @author       foomango
 // @match        *microstrategy.atlassian.net/*
 // @match        *strategyagile.atlassian.net/*
