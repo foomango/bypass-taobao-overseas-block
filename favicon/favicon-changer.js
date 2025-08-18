@@ -6,6 +6,9 @@
 // @author       foomango
 // @match        *microstrategy.atlassian.net/*
 // @match        *strategyagile.atlassian.net/*
+// @match        *cloudnext-dev-quarterly-upgrade.trial.cloud.microstrategy.com/*
+// @match        *cloudnext-qa-quarterly-upgrade.trial.cloud.microstrategy.com/*
+// @match        *deploy-stg.cloud.microstrategy.com/*
 // @match        *provision.customer.cloud.microstrategy.com/*
 // @grant        none
 // @namespace    https://greasyfork.org/users/705411-foomango
@@ -28,12 +31,22 @@
   ) {
     newFaviconUrl =
       "https://cdn-1.webcatalog.io/catalog/microstrategy/microstrategy-icon-filled-256.webp?v=1714775136585";
+  } else if (window.location.hostname.includes("cloudnext-dev-quarterly-upgrade.trial.cloud.microstrategy.com")) {
+    newFaviconUrl = 'https://cdn-icons-png.flaticon.com/128/3242/3242257.png';
+  } else if (window.location.hostname.includes("cloudnext-qa-quarterly-upgrade.trial.cloud.microstrategy.com")) {
+    newFaviconUrl = 'https://cdn-icons-png.flaticon.com/128/10061/10061767.png';
+  } else if (window.location.hostname.includes("deploy-stg.cloud.microstrategy.com")) {
+    newFaviconUrl = 'https://cdn-icons-png.flaticon.com/128/2299/2299834.png';
   } else {
     return;
   }
 
   // Function to dynamically update the favicon
   function changeFavicon(url) {
+    if (!url) {
+      console.warn("No favicon URL provided.");
+      return;
+    }
     // Provide the URL of the desired favicon
     const link = document.createElement("link");
     link.rel = "icon";
