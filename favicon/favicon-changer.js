@@ -5,6 +5,7 @@
 // @version      0.0.2
 // @author       foomango
 // @match        *microstrategy.atlassian.net/*
+// @match        *strategyagile.atlassian.net/*
 // @match        *provision.customer.cloud.microstrategy.com/*
 // @grant        none
 // @namespace    https://greasyfork.org/users/705411-foomango
@@ -18,6 +19,8 @@
   if (window.location.hostname.includes("microstrategy.atlassian.net")) {
     newFaviconUrl =
       "https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon.png";
+  } else if (window.location.hostname.includes("strategyagile.atlassian.net")) {
+    newFaviconUrl = "https://cdn-icons-png.flaticon.com/128/5968/5968875.png";
   } else if (
     window.location.hostname.includes(
       "provision.customer.cloud.microstrategy.com"
