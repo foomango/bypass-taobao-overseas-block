@@ -2,17 +2,22 @@
 // @name         Favicon Changer
 // @description  A script to change the favicon of a website dynamically.
 // @icon         https://lh3.googleusercontent.com/HCZN-e46WVjQuhNwXMvqYgi7N-nBBX-u4CMxBj2B15vYqeFF12YTHvE9ECeZ2FuzGWvB1PT03-uCDXGRl_Erjt_-XWc=s120
-// @version      0.0.5
+// @version      0.0.6
 // @author       foomango
 // @match        *microstrategy.atlassian.net/*
 // @match        *strategyagile.atlassian.net/*
+// @match        *cloudnext-dev-quarterly-upgrade.trial.cloud.microstrategy.com/*
 // @match        *cloudnext-dev-quarterly-upgrade.trial.cloud.*strategy.com/*
-// @match        *cloudnext-qa-quarterly-upgrade.trial.cloud.*strategy.com/*
-// @match        *deploy-stg.cloud.*strategy.com/*
+// @match        *cloudnext-qa-quarterly-upgrade.trial.cloud.microstrategy.com/*
+// @match        *cloudnext-qa-quarterly-upgrade.trial.cloud.strategy.com/*
+// @match        *deploy-stg.cloud.microstrategy.com/*
+// @match        *deploy-stg.cloud.strategy.com/*
 // @match        *provision.customer.cloud.microstrategy.com/*
 // @grant        none
 // @namespace    https://greasyfork.org/users/705411-foomango
 // @license MIT
+// @downloadURL https://update.greasyfork.org/scripts/539789/Favicon%20Changer.user.js
+// @updateURL https://update.greasyfork.org/scripts/539789/Favicon%20Changer.meta.js
 // ==/UserScript==
 
 (function () {
@@ -37,8 +42,6 @@
     newFaviconUrl = 'https://cdn-icons-png.flaticon.com/128/10061/10061767.png';
   } else if (/^deploy-stg.cloud.*strategy.com$/.test(window.location.hostname)) {
     newFaviconUrl = 'https://cdn-icons-png.flaticon.com/128/2299/2299834.png';
-  } else {
-    return;
   }
 
   // Function to dynamically update the favicon
